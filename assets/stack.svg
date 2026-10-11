@@ -1,0 +1,165 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b16" />
+      <stop offset="100%" stop-color="#0b1221" />
+    </linearGradient>
+
+    <!-- UI Pattern -->
+    <pattern id="dotPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="rgba(255, 255, 255, 0.04)" />
+    </pattern>
+
+    <style>
+      .header-text { font-family: -apple-system, sans-serif; font-size: 14px; font-weight: 700; fill: #58a6ff; letter-spacing: 1.5px; }
+      .group-title { font-family: -apple-system, sans-serif; font-size: 13px; font-weight: 600; fill: #8b949e; }
+      .chip-text { font-family: monospace; font-size: 12px; fill: #c9d1d9; font-weight: 600; }
+      .orbit-text { font-family: monospace; font-size: 11px; fill: #ffffff; font-weight: bold; }
+      
+      /* Orb Animations */
+      .orb { transform-origin: 550px 200px; }
+      .spin1 { animation: spin 18s linear infinite; }
+      .spin2 { animation: spin-rev 24s linear infinite; }
+      .spin3 { animation: spin 32s linear infinite; }
+      
+      /* Counter-Spins (To keep text upright) */
+      .c-p1 { transform-origin: 550px 125px; animation: c-spin 18s linear infinite; }
+      .c-p2 { transform-origin: 614.95px 237.5px; animation: c-spin 18s linear infinite; }
+      .c-p3 { transform-origin: 485.05px 237.5px; animation: c-spin 18s linear infinite; }
+      
+      .c-p4 { transform-origin: 680px 200px; animation: c-spin-rev 24s linear infinite; }
+      .c-p5 { transform-origin: 420px 200px; animation: c-spin-rev 24s linear infinite; }
+      
+      .c-p6 { transform-origin: 550px 15px; animation: c-spin 32s linear infinite; }
+      .c-p7 { transform-origin: 550px 385px; animation: c-spin 32s linear infinite; }
+
+      @keyframes spin { 100% { transform: rotate(360deg); } }
+      @keyframes spin-rev { 100% { transform: rotate(-360deg); } }
+      @keyframes c-spin { 100% { transform: rotate(-360deg); } }
+      @keyframes c-spin-rev { 100% { transform: rotate(360deg); } }
+      
+      .core-pulse { animation: pulse 2s ease-in-out infinite; }
+      @keyframes pulse { 0%, 100% { r: 15px; opacity: 0.5; } 50% { r: 20px; opacity: 0.2; } }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" rx="12" />
+  <rect width="100%" height="100%" fill="url(#dotPattern)" rx="12" />
+
+  <!-- LEFT COLUMN: CATEGORIZED TECH STACK -->
+  <g transform="translate(50, 40)">
+    <text x="0" y="0" class="header-text">TECHNOLOGY STACK</text>
+    <rect x="0" y="12" width="40" height="2" fill="#247bff" />
+
+    <!-- Group 1: AI & Data -->
+    <g transform="translate(0, 50)">
+      <text x="0" y="0" class="group-title">AI &amp; MACHINE LEARNING</text>
+      <!-- Row 1 -->
+      <rect x="0" y="15" width="95" height="28" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="47.5" y="34" class="chip-text" text-anchor="middle">TensorFlow</text>
+      
+      <rect x="105" y="15" width="90" height="28" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="150" y="34" class="chip-text" text-anchor="middle">LangChain</text>
+      
+      <!-- Row 2 -->
+      <rect x="0" y="51" width="70" height="28" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="35" y="70" class="chip-text" text-anchor="middle">OpenCV</text>
+
+      <rect x="80" y="51" width="100" height="28" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="130" y="70" class="chip-text" text-anchor="middle">GenAI / LLMs</text>
+    </g>
+
+    <!-- Group 2: Backend & DB -->
+    <g transform="translate(0, 160)">
+      <text x="0" y="0" class="group-title">BACKEND &amp; DATABASES</text>
+      <!-- Row 1 -->
+      <rect x="0" y="15" width="70" height="28" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="35" y="34" class="chip-text" text-anchor="middle">Python</text>
+      
+      <rect x="80" y="15" width="75" height="28" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="117.5" y="34" class="chip-text" text-anchor="middle">FastAPI</text>
+      
+      <rect x="165" y="15" width="50" height="28" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="190" y="34" class="chip-text" text-anchor="middle">SQL</text>
+      
+      <!-- Row 2 -->
+      <rect x="0" y="51" width="100" height="28" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="50" y="70" class="chip-text" text-anchor="middle">PostgreSQL</text>
+    </g>
+
+    <!-- Group 3: Core & Frontend -->
+    <g transform="translate(0, 270)">
+      <text x="0" y="0" class="group-title">CORE &amp; FRONTEND</text>
+      <!-- Row 1 -->
+      <rect x="0" y="15" width="50" height="28" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="25" y="34" class="chip-text" text-anchor="middle">C++</text>
+      
+      <rect x="60" y="15" width="85" height="28" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="102.5" y="34" class="chip-text" text-anchor="middle">React.js</text>
+      
+      <rect x="155" y="15" width="50" height="28" rx="5" fill="#161b22" stroke="#30363d" stroke-width="1"/>
+      <text x="180" y="34" class="chip-text" text-anchor="middle">DSA</text>
+    </g>
+  </g>
+
+  <!-- Decorative Connection Line -->
+  <path d="M 280 200 L 350 200" stroke="#30363d" stroke-dasharray="2 4" fill="none"/>
+  <circle cx="350" cy="200" r="3" fill="#30363d" />
+
+  <!-- RIGHT COLUMN: ANIMATED ORBITAL SYSTEM -->
+  <g id="orbital-system">
+    
+    <!-- Orbital Rings -->
+    <circle cx="550" cy="200" r="75" fill="none" stroke="#30363d" stroke-width="1" stroke-dasharray="4 4" />
+    <circle cx="550" cy="200" r="130" fill="none" stroke="#30363d" stroke-width="1" stroke-dasharray="4 4" />
+    <circle cx="550" cy="200" r="185" fill="none" stroke="#247bff" stroke-width="1" stroke-opacity="0.3" stroke-dasharray="6 6" />
+
+    <!-- Core Center -->
+    <circle cx="550" cy="200" r="15" fill="#247bff" class="core-pulse" />
+    <circle cx="550" cy="200" r="22" fill="#0d1117" stroke="#247bff" stroke-width="1.5" />
+    <text x="550" y="204" font-family="sans-serif" font-weight="900" font-size="11" fill="#247bff" text-anchor="middle">AI</text>
+
+    <!-- Orbit 1 (Radius 75) -->
+    <g class="orb spin1">
+      <g class="c-p1">
+        <rect x="520" y="113" width="60" height="24" rx="12" fill="#161b22" stroke="#247bff" stroke-width="1"/>
+        <text x="550" y="129" class="orbit-text" text-anchor="middle">Python</text>
+      </g>
+      <g class="c-p2">
+        <rect x="590" y="225.5" width="50" height="24" rx="12" fill="#161b22" stroke="#ff354f" stroke-width="1"/>
+        <text x="615" y="241.5" class="orbit-text" text-anchor="middle">C++</text>
+      </g>
+      <g class="c-p3">
+        <rect x="460" y="225.5" width="50" height="24" rx="12" fill="#161b22" stroke="#58a6ff" stroke-width="1"/>
+        <text x="485" y="241.5" class="orbit-text" text-anchor="middle">SQL</text>
+      </g>
+    </g>
+
+    <!-- Orbit 2 (Radius 130) -->
+    <g class="orb spin2">
+      <g class="c-p4">
+        <rect x="640" y="188" width="80" height="24" rx="12" fill="#161b22" stroke="#247bff" stroke-width="1"/>
+        <text x="680" y="204" class="orbit-text" text-anchor="middle">FastAPI</text>
+      </g>
+      <g class="c-p5">
+        <rect x="380" y="188" width="80" height="24" rx="12" fill="#161b22" stroke="#ff354f" stroke-width="1"/>
+        <text x="420" y="204" class="orbit-text" text-anchor="middle">React.js</text>
+      </g>
+    </g>
+
+    <!-- Orbit 3 (Radius 185) -->
+    <g class="orb spin3">
+      <g class="c-p6">
+        <rect x="500" y="3" width="100" height="24" rx="12" fill="#0d1117" stroke="#247bff" stroke-width="1.5"/>
+        <text x="550" y="19" class="orbit-text" fill="#247bff" text-anchor="middle">TensorFlow</text>
+      </g>
+      <g class="c-p7">
+        <rect x="505" y="373" width="90" height="24" rx="12" fill="#0d1117" stroke="#ff354f" stroke-width="1.5"/>
+        <text x="550" y="389" class="orbit-text" fill="#ff354f" text-anchor="middle">LangChain</text>
+      </g>
+    </g>
+    
+  </g>
+</svg>

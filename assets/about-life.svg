@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b16" />
+      <stop offset="100%" stop-color="#0b1221" />
+    </linearGradient>
+    
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(36, 123, 255, 0.1)" />
+      <stop offset="100%" stop-color="rgba(36, 123, 255, 0.02)" />
+    </linearGradient>
+
+    <!-- UI Pattern -->
+    <pattern id="dotPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="rgba(255, 255, 255, 0.04)" />
+    </pattern>
+
+    <style>
+      .header-text { font-family: -apple-system, sans-serif; font-size: 14px; font-weight: 700; fill: #58a6ff; letter-spacing: 1.5px; }
+      .badge-text { font-family: monospace; font-size: 13px; fill: #c9d1d9; font-weight: 600; }
+      .slide-title { font-family: -apple-system, sans-serif; font-size: 20px; font-weight: 700; fill: #ffffff; }
+      .slide-desc { font-family: -apple-system, sans-serif; font-size: 14px; fill: #8b949e; }
+      .slide-bullet { font-family: -apple-system, sans-serif; font-size: 15px; fill: #c9d1d9; font-weight: 500; }
+      
+      /* Carousel Fade Animations (12s total loop, 4s per slide) */
+      .slide1 { animation: fade1 12s infinite; }
+      .slide2 { animation: fade2 12s infinite; opacity: 0; }
+      .slide3 { animation: fade3 12s infinite; opacity: 0; }
+      
+      @keyframes fade1 { 0%, 28% { opacity: 1; } 33%, 95% { opacity: 0; } 100% { opacity: 1; } }
+      @keyframes fade2 { 0%, 28% { opacity: 0; } 33%, 61% { opacity: 1; } 66%, 100% { opacity: 0; } }
+      @keyframes fade3 { 0%, 61% { opacity: 0; } 66%, 95% { opacity: 1; } 100% { opacity: 0; } }
+
+      /* Segment Progress Bars */
+      .bar-fill { fill: #247bff; }
+      .bar1 { animation: load1 12s infinite; }
+      .bar2 { animation: load2 12s infinite; }
+      .bar3 { animation: load3 12s infinite; }
+
+      @keyframes load1 { 0% { width: 0; } 28% { width: 100px; } 33%, 100% { width: 0; } }
+      @keyframes load2 { 0%, 33% { width: 0; } 61% { width: 100px; } 66%, 100% { width: 0; } }
+      @keyframes load3 { 0%, 66% { width: 0; } 95% { width: 100px; } 100% { width: 0; } }
+      
+      .hover-glow:hover { fill: rgba(36, 123, 255, 0.2); transition: 0.3s; }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="100%" height="100%" fill="url(#bgGrad)" rx="12" />
+  <rect width="100%" height="100%" fill="url(#dotPattern)" rx="12" />
+
+  <!-- LEFT COLUMN: CAPABILITIES -->
+  <g transform="translate(50, 50)">
+    <text x="0" y="0" class="header-text">CORE CAPABILITIES</text>
+    <rect x="0" y="15" width="40" height="2" fill="#ff354f" />
+    
+    <!-- Badges Row 1 -->
+    <g transform="translate(0, 45)">
+      <rect x="0" y="0" width="160" height="32" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1" class="hover-glow"/>
+      <text x="80" y="21" class="badge-text" text-anchor="middle">Machine Learning</text>
+      
+      <rect x="175" y="0" width="140" height="32" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1" class="hover-glow"/>
+      <text x="245" y="21" class="badge-text" text-anchor="middle">API Integration</text>
+    </g>
+
+    <!-- Badges Row 2 -->
+    <g transform="translate(0, 95)">
+      <rect x="0" y="0" width="140" height="32" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1" class="hover-glow"/>
+      <text x="70" y="21" class="badge-text" text-anchor="middle">Multi-Agent AI</text>
+      
+      <rect x="155" y="0" width="160" height="32" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1" class="hover-glow"/>
+      <text x="235" y="21" class="badge-text" text-anchor="middle">DSA &amp; Problem Solving</text>
+    </g>
+
+    <!-- Badges Row 3 -->
+    <g transform="translate(0, 145)">
+      <rect x="0" y="0" width="130" height="32" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1" class="hover-glow"/>
+      <text x="65" y="21" class="badge-text" text-anchor="middle">Data Analysis</text>
+      
+      <rect x="145" y="0" width="170" height="32" rx="6" fill="#161b22" stroke="#30363d" stroke-width="1" class="hover-glow"/>
+      <text x="230" y="21" class="badge-text" text-anchor="middle">Full-Stack Dev</text>
+    </g>
+  </g>
+
+  <!-- RIGHT COLUMN: CAROUSEL CARD -->
+  <g transform="translate(420, 30)">
+    <!-- Glassmorphism Card Base -->
+    <rect x="0" y="0" width="340" height="230" rx="12" fill="url(#cardGrad)" stroke="#247bff" stroke-width="1" stroke-opacity="0.3" />
+    
+    <!-- Segment Progress Bars (Like Instagram Stories) -->
+    <g transform="translate(20, 20)">
+      <!-- Track -->
+      <rect x="0" y="0" width="95" height="4" rx="2" fill="#30363d" />
+      <rect x="102" y="0" width="95" height="4" rx="2" fill="#30363d" />
+      <rect x="204" y="0" width="95" height="4" rx="2" fill="#30363d" />
+      
+      <!-- Animated Fills -->
+      <rect x="0" y="0" width="0" height="4" rx="2" class="bar-fill bar1" />
+      <rect x="102" y="0" width="0" height="4" rx="2" class="bar-fill bar2" />
+      <rect x="204" y="0" width="0" height="4" rx="2" class="bar-fill bar3" />
+    </g>
+
+    <!-- SLIDE 1: Hackathons & Innovation -->
+    <g class="slide1" transform="translate(25, 65)">
+      <text x="0" y="0" class="slide-title">Hackathons &amp; Innovation</text>
+      <text x="0" y="25" class="slide-desc">Recognized for building impactful solutions.</text>
+      
+      <g transform="translate(0, 60)">
+        <circle cx="6" cy="-5" r="4" fill="#ff354f" />
+        <text x="20" y="0" class="slide-bullet">🏆 SIH 2025 Finalist</text>
+        <text x="20" y="20" class="slide-desc">Govt. Website Accessibility Enhancer</text>
+      </g>
+      <g transform="translate(0, 115)">
+        <circle cx="6" cy="-5" r="4" fill="#247bff" />
+        <text x="20" y="0" class="slide-bullet">🚀 Technocrats 2025 Finalist</text>
+        <text x="20" y="20" class="slide-desc">Top 50 - National Hackathon</text>
+      </g>
+    </g>
+
+    <!-- SLIDE 2: Multi-Agent AI Systems -->
+    <g class="slide2" transform="translate(25, 65)">
+      <text x="0" y="0" class="slide-title">Multi-Agent AI Systems</text>
+      <text x="0" y="25" class="slide-desc">Building autonomous LLM architectures.</text>
+      
+      <g transform="translate(0, 60)">
+        <circle cx="6" cy="-5" r="4" fill="#ff354f" />
+        <text x="20" y="0" class="slide-bullet">🤖 FinAgentX System</text>
+        <text x="20" y="20" class="slide-desc">AI Investment Decision Engine</text>
+      </g>
+      <g transform="translate(0, 115)">
+        <circle cx="6" cy="-5" r="4" fill="#247bff" />
+        <text x="20" y="0" class="slide-bullet">✈️ AI Travel Planner</text>
+        <text x="20" y="20" class="slide-desc">Multi-Agent Itinerary Optimization</text>
+      </g>
+    </g>
+
+    <!-- SLIDE 3: Applied Machine Learning -->
+    <g class="slide3" transform="translate(25, 65)">
+      <text x="0" y="0" class="slide-title">Applied Machine Learning</text>
+      <text x="0" y="25" class="slide-desc">Solving real-world data problems.</text>
+      
+      <g transform="translate(0, 60)">
+        <circle cx="6" cy="-5" r="4" fill="#ff354f" />
+        <text x="20" y="0" class="slide-bullet">🌍 GreenPulse AI</text>
+        <text x="20" y="20" class="slide-desc">Climate &amp; Environmental Risk Monitor</text>
+      </g>
+      <g transform="translate(0, 115)">
+        <circle cx="6" cy="-5" r="4" fill="#247bff" />
+        <text x="20" y="0" class="slide-bullet">🌱 Crop Health Vision</text>
+        <text x="20" y="20" class="slide-desc">TensorFlow Disease Detection System</text>
+      </g>
+    </g>
+  </g>
+</svg>
